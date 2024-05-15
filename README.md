@@ -5,7 +5,7 @@ Unfortunately, I cant share the game exe in here because it runs through steam (
 When running the exe, there will be a message to show if the app successfully attached to the game. from there you can type 'help' for a command list. <br>
 All the code in this project is written 100% by me. I chose to make this project becuase i have used tools like Cheat Engine in the past and i wanted to apply similar concepts with cpp. Notable functions include: <br>
 - findProcessId() in main.cpp <br>
-- aobScan() in process.cpp <br>\
+- aobScan() in process.cpp <br>
 
 Note: This code likely only works on windows machines because it makes use of the windows.h library, though I have not tried elsewhere. <br>
 
