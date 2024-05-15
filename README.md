@@ -6,6 +6,7 @@ When running the exe, there will be a message to show if the app successfully at
 All the code in this project is written 100% by me. I chose to make this project becuase i have used tools like Cheat Engine in the past and i wanted to apply similar concepts with cpp. Notable functions include: <br>
 - findProcessId() in main.cpp <br>
 - aobScan() in process.cpp <br>\
+
 Note: This code likely only works on windows machines because it makes use of the windows.h library, though I have not tried elsewhere. <br>
 
 ### To compile
