@@ -1,0 +1,5 @@
+- maybe an aob scan which allows wild cards
+- plant class which will take the base address and find values from offsets
+    - Try and make an autocollect sun for sun flowers
+- zombie class which will do the same as plant
+    - Try and make a spawn blocker for certain zombie types
