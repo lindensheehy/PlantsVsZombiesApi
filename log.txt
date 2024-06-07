@@ -1,2 +1,6 @@
 Starting...
-no process found
+process found at id: 0x5DA4
+setsun -> 1000: writing value of 1000 at address 0x1CE95580
+setsunvalue -> 100: writing value of 100 at address 0x434713
+setsun -> 9990: writing value of 9990 at address 0x1CE95580
+help: autosun: Toggling sunautocollect mod to true

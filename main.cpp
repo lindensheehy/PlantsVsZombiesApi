@@ -76,6 +76,98 @@ class Game {
         // Mods
         void autoCollectSunToggle() {
 
+            /*
+                The huge sets of bytes here are 86x assembly instructions I wrote using Cheat Engine
+                The simplified explanation of this is it overwrites the spawn sun function call, and instead simply adds 25 to the sun count
+                The code is quite long becuase the portion on code which creates the timer for the next sun spawn needs to remain untouched,
+                and most of the registers need to be kept after that call happends.
+                
+                Here is the assembly code:
+
+                -----   From Plants   -----
+                // Save original register states
+                push eax
+                push ecx
+                push edx
+                push esi
+
+                // original code
+                mov eax,[edi+5C]
+                lea esi,[eax-00000096]
+                sub eax,esi
+                inc eax
+                push eax
+                call popcapgame1.exe+2052F0
+                add eax,esi
+                mov [edi+58],eax
+                mov eax,[edi]
+                add esp,04
+
+                // Load saved register states
+                pop esi
+                pop edx
+                pop ecx
+                pop eax
+                pop esi
+
+                // add sun
+                // sun value at [[731C50]+868]+5578
+                push eax
+                mov eax, 731C50
+                mov eax, [eax]
+                mov eax, [eax+868]
+                add [eax+5578], 19
+                pop eax
+
+                ret
+
+                -----   From Sky   -----
+                // Save original register states
+                push eax
+                push ebx
+                push ecx
+                push edx
+                push edi
+
+                // Original code
+                inc [esi+00005554]
+                mov edi,eax
+                mov eax,[esi+00005554]
+                lea eax,[eax+eax*4]
+                lea eax,[eax+eax+000001A9]
+                add esp,04
+                add edi,64
+                cmp eax,000003B6
+                mov ebx,000003B6
+                jg popcapgame1.exe+170B0
+                mov ebx,eax
+                push 00000113
+                call popcapgame1.exe+2052F0
+                mov ecx,[esi+000000A4]
+                add eax,ebx
+                mov [esi+00005550],eax
+
+                // Load saved register states
+                pop edi
+                pop edx
+                pop ecx
+                pop ebx
+                pop eax
+                pop edi
+                pop ebx
+
+                // add sun
+                // sun value at [[731C50]+868]+5578
+                push eax
+                mov eax, 731C50
+                mov eax, [eax]
+                mov eax, [eax+868]
+                add [eax+5578], 19
+                pop eax
+
+                ret
+            */
+
             // Enable mod
             if (!this->autoCollentSunEnabled) {
 
